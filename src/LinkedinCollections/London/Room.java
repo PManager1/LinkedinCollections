@@ -7,12 +7,34 @@ public class Room {
     private int capacity;
     private double rate;
 
+
     public Room(String name, String type, int capacity, Double rate) {
         this.name = name;
         this.type = type;
         this.capacity = capacity;
         this.rate = rate;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Room room)) return false;
+
+        if (!getName().equals(room.getName())) return false;
+        return getType().equals(room.getType());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName().hashCode();
+        result = 31 * result + getType().hashCode();
+        return result;
+    }
+
+
+
+
 
     public String getName() {
         return name;

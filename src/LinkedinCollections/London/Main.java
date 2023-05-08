@@ -7,23 +7,28 @@ public class Main {
 
         Room cambridge = new Room ( "Room one", "continental", 1, 120.20 );
         Room manchester = new Room ( "Room Two", "continental", 2, 120.23 );
+        Room oxford = new Room ( "Room Two", "continental", 2, 100.00 );
 
-
-        Collection<Room> rooms = List.of(cambridge, manchester);
+                                                                                                     //        Collection<Room> rooms = List.of(cambridge, manchester, oxford);   // Foll is better but it worked to idk why.
+        Collection<Room> rooms = new ArrayList<>(List.of(cambridge, manchester, oxford));
         double total = CalculateRevenueUsingCollections(rooms);
 //        double total = CalculateRevenue(cambridge, manchester);
         System.out.println("14--total = "+ total );
 
     }
 
-
     public static double CalculateRevenueUsingCollections ( Collection<Room> rooms) {
 
-        return rooms.stream()
-                .mapToDouble(r -> r.getRate())
-//                .distinct()
-                .sum();
-        
+//        return rooms.stream()
+//                .mapToDouble(r -> r.getRate())
+////                .distinct()
+//                .sum();
+
+
+//                 rooms.stream()
+//                         .forEach(System.out::println);
+
+        return 0;
 
     }
 
