@@ -5,16 +5,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Room cambridge = new Room ( "Room one", "continental", 1, 123.23 );
-        Room manchester = new Room ( "Room Two", "continental", 2, 123.23 );
+        Room cambridge = new Room ( "Room one", "continental", 1, 120.20 );
+        Room manchester = new Room ( "Room Two", "continental", 2, 120.23 );
 
 
         Collection<Room> rooms = List.of(cambridge, manchester);
         double total = CalculateRevenueUsingCollections(rooms);
-        System.out.println("14--total = "+ total );
-
 //        double total = CalculateRevenue(cambridge, manchester);
-//        System.out.println("23--l1 = "+ total );
+        System.out.println("14--total = "+ total );
 
     }
 
@@ -23,7 +21,9 @@ public class Main {
 
         return rooms.stream()
                 .mapToDouble(r -> r.getRate())
+//                .distinct()
                 .sum();
+        
 
     }
 
